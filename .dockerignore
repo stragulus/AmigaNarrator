@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 AmigaNarrator contributors
+# SPDX-License-Identifier: 0BSD
+# Only send build inputs; exclude local binaries, runtime data and Git metadata.
+*
+!Makefile
+!cpuconf.h
+!narrator.c
+!translator.c
+!translateas.c
+!Musashi/
+!Musashi/**
+!scripts/
+!scripts/extract-workbench13.sh
+**/.git

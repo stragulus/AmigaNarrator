@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 AmigaNarrator contributors
+# SPDX-License-Identifier: 0BSD
+FROM alpine:3.22
+RUN apk add --no-cache python3 py3-pip \
+    && python3 -m venv /opt/amitools \
+    && /opt/amitools/bin/pip install --no-cache-dir amitools==0.9.0
+ENV PATH="/opt/amitools/bin:$PATH"
+COPY scripts/extract-workbench13.sh /usr/local/bin/extract-workbench13
+ENTRYPOINT ["sh", "/usr/local/bin/extract-workbench13"]
